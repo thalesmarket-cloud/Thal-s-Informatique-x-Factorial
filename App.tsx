@@ -1,15 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
-import Hero from './components/Hero';
-import Partnership from './components/Partnership';
-import Problems from './components/Problems';
-import Solutions from './components/Solutions';
-import WhyThales from './components/WhyThales';
-import SocialProof from './components/SocialProof';
-import LeadForm from './components/LeadForm';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import { Sun, Moon } from 'lucide-react';
+import Hero from './components/Hero.tsx';
+import Partnership from './components/Partnership.tsx';
+import Problems from './components/Problems.tsx';
+import Solutions from './components/Solutions.tsx';
+import WhyThales from './components/WhyThales.tsx';
+import SocialProof from './components/SocialProof.tsx';
+import LeadForm from './components/LeadForm.tsx';
+import Footer from './components/Footer.tsx';
+import Navbar from './components/Navbar.tsx';
 
 const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
