@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 animate-pulse delay-700"></div>
             <img 
-              src="https://picsum.photos/seed/rh-saas/800/600" 
+              src="https://www.datocms-assets.com/58969/1719930993-hero-core-lp-ana-finalx1-5.webp?auto=format&fit=max&w=3840&q=75" 
               alt="Factorial Interface Dashboard" 
               className="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full object-cover aspect-[4/3]"
             />
