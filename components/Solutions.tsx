@@ -64,7 +64,7 @@ const Solutions: React.FC = () => {
         <div className="mt-16 text-center">
           <p className="text-blue-100 mb-8 font-medium">Rejoignez plus de 10 000 entreprises qui utilisent Factorial au quotidien.</p>
           <a href="#contact" className="inline-flex px-10 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all shadow-xl">
-            Voir la démo produit
+            Réservez une démo gratuite
           </a>
         </div>
       </div>

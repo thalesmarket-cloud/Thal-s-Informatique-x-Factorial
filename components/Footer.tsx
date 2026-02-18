@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <p className="text-sm leading-relaxed mb-6">
-              Partenaire certifié Factorial, nous accompagnons la transformation digitale des entreprises depuis plus de 20 ans avec passion et expertise.
+              Partenaire certifié Factorial, nous accompagnons la transformation digitale des entreprises depuis plus de 20 ans avec passion et expertise métier.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
@@ -29,12 +29,13 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Liens rapides</h4>
+            <h4 className="text-white font-bold mb-6">Navigation</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#about" className="hover:text-white transition-colors">Le Partenariat</a></li>
-              <li><a href="#solutions" className="hover:text-white transition-colors">Nos Solutions RH</a></li>
-              <li><a href="#advantages" className="hover:text-white transition-colors">Pourquoi Thalès ?</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Demander une démo</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">L'Alliance</a></li>
+              <li><a href="#defis" className="hover:text-white transition-colors">Vos Défis</a></li>
+              <li><a href="#solutions" className="hover:text-white transition-colors">La Solution</a></li>
+              <li><a href="#personas" className="hover:text-white transition-colors">Pour qui ?</a></li>
+              <li><a href="#advantages" className="hover:text-white transition-colors">Expertise Thalès</a></li>
             </ul>
           </div>
 
@@ -58,23 +59,31 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-white font-bold mb-6">Solution Partenaire</h4>
-            <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
-              <p className="text-xs italic mb-4">"Factorial est la solution RH n°1 pour les PME en Europe."</p>
-              <img 
-                src="https://picsum.photos/seed/factorial-white/200/50?grayscale" 
-                alt="Factorial Partner" 
-                className="h-6 w-auto opacity-70 invert"
-              />
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+              <p className="text-xs italic mb-4">"Factorial est la solution RH n°1 pour les PME en Europe, intégrée par Thalès Informatique."</p>
+              <div className="flex items-center gap-2 mt-4">
+                <img 
+                  src="https://res.cloudinary.com/dmutnjgp8/image/upload/v1771409242/Factorial_logo_couleur_xywdb2.png" 
+                  alt="Factorial Logo" 
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
             </div>
+            <a 
+              href="#contact" 
+              className="mt-6 inline-block w-full text-center py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all text-sm shadow-lg shadow-blue-500/10"
+            >
+              Demander une démo
+            </a>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Thalès Informatique. Tous droits réservés.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
             <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            <a href="#" className="hover:text-white transition-colors">Gestion des cookies</a>
           </div>
         </div>
       </div>
