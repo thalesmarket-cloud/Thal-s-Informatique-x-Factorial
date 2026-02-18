@@ -1,8 +1,46 @@
 
-import React from 'react';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
+import { GoogleGenAI } from "@google/genai";
 
 const Hero: React.FC = () => {
+  const [heroImage, setHeroImage] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState(true);
+
+  useEffect(() => {
+    const generateHeroImage = async () => {
+      try {
+        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const response = await ai.models.generateContent({
+          model: 'gemini-2.5-flash-image',
+          contents: {
+            parts: [
+              {
+                text: 'A professional high-resolution screenshot of a modern HR Management System dashboard, clean minimalist design, featuring employee profiles and attendance charts. Color palette: corporate blue and white. 4K, high quality, tech aesthetic.',
+              },
+            ],
+          },
+        });
+
+        for (const part of response.candidates[0].content.parts) {
+          if (part.inlineData) {
+            const base64EncodeString = part.inlineData.data;
+            setHeroImage(`data:image/png;base64,${base64EncodeString}`);
+            break;
+          }
+        }
+      } catch (error) {
+        console.error("Erreur lors de la génération de l'image:", error);
+        // Image de secours en cas d'erreur
+        setHeroImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426");
+      } finally {
+        setIsGenerating(false);
+      }
+    };
+
+    generateHeroImage();
+  }, []);
+
   return (
     <section className="relative pt-20 pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -12,7 +50,7 @@ const Hero: React.FC = () => {
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Partenaire Officiel Factorial</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.1] mb-6">
-              Simplifiez votre gestion RH avec <span className="text-blue-600">Factorial</span>
+              Simplifiez votre gestion RH avec <span className="text-[#FF355E]">Factorial</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
               Thalès Informatique vous accompagne dans la digitalisation de vos processus RH. Libérez vos équipes des tâches administratives chronophages et concentrez-vous sur l'essentiel : vos collaborateurs.
@@ -47,12 +85,23 @@ const Hero: React.FC = () => {
           <div className="lg:w-1/2 relative">
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 animate-pulse delay-700"></div>
-            <img 
-              src="https://www.datocms-assets.com/58969/1719930993-hero-core-lp-ana-finalx1-5.webp?auto=format&fit=max&w=3840&q=75" 
-              alt="Factorial Interface Dashboard" 
-              className="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full object-cover aspect-[4/3]"
-            />
-            <div className="absolute -bottom-6 -right-6 md:right-0 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-[240px] hidden md:block">
+            
+            <div className="relative rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+              {isGenerating ? (
+                <div className="flex flex-col items-center gap-4 text-slate-400">
+                  <Loader2 className="w-12 h-12 animate-spin text-blue-600" />
+                  <p className="text-sm font-medium animate-pulse">Génération de votre interface personnalisée...</p>
+                </div>
+              ) : (
+                <img 
+                  src={heroImage || ""} 
+                  alt="Factorial Interface Dashboard Generated" 
+                  className="w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+                />
+              )}
+            </div>
+
+            <div className="absolute -bottom-6 -right-6 md:right-0 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-[240px] hidden md:block z-20">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                   <span className="font-bold text-lg">+30%</span>

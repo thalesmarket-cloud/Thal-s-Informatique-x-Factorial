@@ -4,7 +4,9 @@ import Hero from './components/Hero.tsx';
 import Partnership from './components/Partnership.tsx';
 import Problems from './components/Problems.tsx';
 import Solutions from './components/Solutions.tsx';
+import AutomationSection from './components/AutomationSection.tsx';
 import WhyThales from './components/WhyThales.tsx';
+import PersonaSection from './components/PersonaSection.tsx';
 import SocialProof from './components/SocialProof.tsx';
 import LeadForm from './components/LeadForm.tsx';
 import Footer from './components/Footer.tsx';
@@ -31,7 +33,9 @@ const App: React.FC = () => {
         <Partnership />
         <Problems />
         <Solutions />
+        <AutomationSection />
         <WhyThales />
+        <PersonaSection />
         <SocialProof />
         <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
