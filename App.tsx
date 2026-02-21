@@ -4,6 +4,7 @@ import Hero from './components/Hero.tsx';
 import Partnership from './components/Partnership.tsx';
 import Problems from './components/Problems.tsx';
 import Solutions from './components/Solutions.tsx';
+import AIAgentSection from './components/AIAgentSection.tsx';
 import AutomationSection from './components/AutomationSection.tsx';
 import WhyThales from './components/WhyThales.tsx';
 import PersonaSection from './components/PersonaSection.tsx';
@@ -33,6 +34,7 @@ const App: React.FC = () => {
         <Partnership />
         <Problems />
         <Solutions />
+        <AIAgentSection />
         <AutomationSection />
         <WhyThales />
         <PersonaSection />
