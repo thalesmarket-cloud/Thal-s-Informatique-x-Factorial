@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram, Youtube, X } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -18,12 +18,21 @@ const Footer: React.FC = () => {
             <p className="text-sm leading-relaxed mb-6">
               Partenaire certifié Factorial, nous accompagnons la transformation digitale des entreprises depuis plus de 20 ans avec passion et expertise métier.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
-                <Twitter size={20} />
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                <Youtube size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                <X size={20} />
               </a>
             </div>
           </div>
